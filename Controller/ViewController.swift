@@ -80,10 +80,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         // Register the table view cell class and its reuse id
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        // (optional) include this line if you want to remove the extra empty cell divider lines
-        // self.tableView.tableFooterView = UIView()
-        
-        // This view controller itself will provide the delegate methods and row data for the table view.
+        view.accessibilityIdentifier = "mainView"
     }
     
     func addComment(name: String, date: Date) -> Comment {

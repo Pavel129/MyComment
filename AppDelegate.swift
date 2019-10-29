@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+//---UITesting---
+//        #if targetEnvironment(simulator)
+//        if CommandLine.arguments.contains("--UITesting") {
+//            resetState()
+//        }
+//        #endif
+        
+        
         
        let vc = window?.rootViewController as! ViewController
        vc.contex = persistentContainer.viewContext
@@ -27,6 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+//---UITesting---
+//    private func resetState() {
+//        guard
+//            let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first,
+//            let url = URL(string: "\(documentPath)myComment.plist") else {return}
+//        let fileManager = FileManager.default
+//        try? fileManager.removeItem(at: url)
+//    }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
